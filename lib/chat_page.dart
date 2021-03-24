@@ -11,7 +11,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('チャット'),
+          title: Text('Chat'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.logout),
@@ -30,7 +30,7 @@ class ChatPage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(8),
-              child: Text('ログイン情報：${user.email}'),
+              child: Text('Account：${user.email}'),
             ),
             Expanded(
               child: StreamBuilder<QuerySnapshot>(

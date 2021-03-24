@@ -37,7 +37,7 @@ class _MyAuthPageState extends State<MyAuthPage> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(labelText: "メールアドレス"),
+                  decoration: InputDecoration(labelText: "Email"),
                   onChanged: (String value) {
                     setState(() {
                       newUserEmail = value;
@@ -46,7 +46,8 @@ class _MyAuthPageState extends State<MyAuthPage> {
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
-                  decoration: InputDecoration(labelText: "パスワード（６文字以上）"),
+                  decoration: InputDecoration(
+                      labelText: "Password (more than 6 characters)"),
                   obscureText: true,
                   onChanged: (String value) {
                     setState(() {
@@ -66,11 +67,11 @@ class _MyAuthPageState extends State<MyAuthPage> {
                       );
                       final User user = result.user;
                       setState(() {
-                        infoText = "登録OK：${user.email}";
+                        infoText = "Registered：${user.email}";
                       });
                     } catch (e) {
                       setState(() {
-                        infoText = "登録NG：${e.toString()}";
+                        infoText = "Failed：${e.toString()}";
                       });
                     }
                   },
@@ -78,7 +79,7 @@ class _MyAuthPageState extends State<MyAuthPage> {
                 ),
                 const SizedBox(height: 32),
                 TextFormField(
-                  decoration: InputDecoration(labelText: "メールアドレス"),
+                  decoration: InputDecoration(labelText: "Email"),
                   onChanged: (String value) {
                     setState(() {
                       loginUserEmail = value;
@@ -86,7 +87,7 @@ class _MyAuthPageState extends State<MyAuthPage> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: "パスワード"),
+                  decoration: InputDecoration(labelText: "Password"),
                   obscureText: true,
                   onChanged: (String value) {
                     setState(() {

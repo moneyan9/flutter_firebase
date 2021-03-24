@@ -14,7 +14,7 @@ class _AddPostPageState extends State<AddPostPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('チャット投稿'),
+          title: Text('Post Message'),
         ),
         body: Center(
           child: Container(
@@ -23,7 +23,7 @@ class _AddPostPageState extends State<AddPostPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(labelText: '投稿メッセージ'),
+                  decoration: InputDecoration(labelText: 'Message'),
                   keyboardType: TextInputType.multiline,
                   maxLines: 3,
                   onChanged: (String value) {
@@ -36,7 +36,7 @@ class _AddPostPageState extends State<AddPostPage> {
                 Container(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: Text('投稿'),
+                    child: Text('Post'),
                     onPressed: () async {
                       final date = DateTime.now().toLocal().toIso8601String();
                       final email = widget.user.email;

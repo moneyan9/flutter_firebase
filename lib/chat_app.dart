@@ -5,8 +5,11 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'ChatApp',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+        theme: ThemeData.light().copyWith(
+          primaryColor: Colors.lightBlue,
+        ),
+        darkTheme: ThemeData.dark().copyWith(
+          primaryColor: Colors.lightBlue,
         ),
         home: LoginPage(),
       );
