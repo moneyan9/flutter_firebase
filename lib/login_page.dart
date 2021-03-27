@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'メールアドレス'),
+                  decoration: InputDecoration(labelText: 'Email'),
                   onChanged: (String value) {
                     setState(() {
                       email = value;
@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'パスワード'),
+                  decoration: InputDecoration(labelText: 'Password'),
                   obscureText: true,
                   onChanged: (String value) {
                     setState(() {
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: Text('ユーザー登録'),
+                    child: Text('Sign up'),
                     onPressed: () async {
                       try {
                         final FirebaseAuth auth = FirebaseAuth.instance;
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                         );
                       } catch (e) {
                         setState(() {
-                          infoText = "登録に失敗しました：${e.toString()}";
+                          infoText = "Failed：${e.toString()}";
                         });
                       }
                     },
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   width: double.infinity,
                   child: OutlinedButton(
-                    child: Text('ログイン'),
+                    child: Text('Sign in'),
                     onPressed: () async {
                       try {
                         final FirebaseAuth auth = FirebaseAuth.instance;
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                         );
                       } catch (e) {
                         setState(() {
-                          infoText = "ログインに失敗しました：${e.toString()}";
+                          infoText = "Failed：${e.toString()}";
                         });
                       }
                     },
